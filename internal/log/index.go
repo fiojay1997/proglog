@@ -3,6 +3,7 @@ package log
 import (
 	"io"
 	"os"
+
 	"github.com/tysontate/gommap"
 )
 
@@ -86,4 +87,3 @@ func (i *index) Write(off uint32, pos uint64) error {
 func (i *index) Name() string {
 	return i.file.Name()
 }
-
