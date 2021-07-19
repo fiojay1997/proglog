@@ -16,9 +16,6 @@ type segment struct {
 	config                 Config
 }
 
-// END: intro
-
-// START: newsegment
 func newSegment(dir string, baseOffset uint64, c Config) (*segment, error) {
 	s := &segment{
 		baseOffset: baseOffset,
