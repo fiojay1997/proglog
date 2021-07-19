@@ -7,6 +7,7 @@ import (
 	"github.com/tysontate/gommap"
 )
 
+// width of the indexes
 var (
 	offWidth uint64 = 4
 	posWidth uint64 = 8
