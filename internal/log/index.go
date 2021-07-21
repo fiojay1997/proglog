@@ -1,6 +1,7 @@
 package log
 
 import (
+	"fmt"
 	"io"
 	"os"
 
@@ -86,5 +87,6 @@ func (i *index) Write(off uint32, pos uint64) error {
 }
 
 func (i *index) Name() string {
+	fmt.Println(i.file.Name())
 	return i.file.Name()
 }
