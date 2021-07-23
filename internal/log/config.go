@@ -11,5 +11,6 @@ type Config struct {
 }
 
 func (c *Config) CheckConfig() {
+	fmt.Println(c.Segment)
 	fmt.Println(c.Segment.InitialOffset)
 }
