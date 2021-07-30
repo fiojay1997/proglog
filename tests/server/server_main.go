@@ -9,6 +9,7 @@ import (
 
 func main() {
 	fmt.Println("hello")
+	fmt.Println("world")
 	srv := server.NewHttpServer(":8080")
 	log.Fatal(srv.ListenAndServe())
 }
