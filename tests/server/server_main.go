@@ -12,4 +12,5 @@ func main() {
 	fmt.Println("world")
 	srv := server.NewHttpServer(":8080")
 	log.Fatal(srv.ListenAndServe())
+	defer srv.Close()
 }
