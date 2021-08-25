@@ -1,7 +1,5 @@
 package log
 
-import "fmt"
-
 type Config struct {
 	Segment struct {
 		MaxStoreBytes uint64
@@ -10,7 +8,18 @@ type Config struct {
 	}
 }
 
-func (c *Config) CheckConfig() {
-	fmt.Println(c.Segment)
-	fmt.Println(c.Segment.InitialOffset)
+func (c *Config) CheckConfig() bool {
+	if c.Segment.InitialOffset == 0 {
+		return false
+	}
+
+	if c.Segment.MaxStoreBytes>>1 > 3 {
+		return false
+	}
+
+	if c.Segment.MaxIndexBytes > c.Segment.MaxStoreBytes {
+		return false
+	}
+
+	return true
 }
