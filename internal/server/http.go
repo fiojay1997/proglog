@@ -87,3 +87,11 @@ func (s *httpServer) handleConsume(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 }
+
+func (s *httpServer) handleError(w http.ResponseWriter, r *http.Request) {
+	err := r.Context().Err()
+	if err != nil {
+		http.Error(w, err.Error(), http.StatusBadRequest)
+		return 
+	}
+}
